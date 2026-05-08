@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talento para Dios | Padre Nuestro Challenge - Concierto Septiembre 2026</title>
+    <meta name="description" content="Apoya el Concierto Talento para Dios. Bandas de todos los géneros presentan su versión del Padre Nuestro. Septiembre 2026.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a1a1a',
+                        secondary: '#FFD700',
+                        accent: '#FFA500',
+                        cyan: '#00FFFF',
+                        studio: '#2D2D2D',
+                        dark: '#0A0A0A',
+                        spotlight: '#FFF8DC'
+                    },
+                    backgroundImage: {
+                        'studio-gradient': 'radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, rgba(26, 26, 26, 0.95) 70%)',
+                        'spotlight-gradient': 'linear-gradient(135deg, #FFF8DC, #F4E4BC, #D4AF37)',
+                        'stage-gradient': 'radial-gradient(ellipse at center, rgba(244, 228, 188, 0.2) 0%, rgba(45, 45, 45, 0.9) 100%)'
+                    },
+                    boxShadow: {
+                        'spotlight': '0 0 50px rgba(212, 175, 55, 0.5)',
+                        'stage': '0 20px 40px rgba(0, 0, 0, 0.3)',
+                        'golden': '0 4px 20px rgba(212, 175, 55, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-studio-gradient text-white min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+
+        <!-- Selector de idioma -->
+        <div class="flex justify-end mb-4">
+            <div class="inline-flex rounded-md shadow-sm bg-studio/50 backdrop-blur-sm" role="group">
+                <button type="button" id="btn-es" class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-l-md focus:outline-none">Español</button>
+                <button type="button" id="btn-en" class="px-4 py-2 text-sm font-medium text-gray-300 bg-studio hover:bg-secondary/20 rounded-r-md focus:outline-none">English</button>
+            </div>
+        </div>
+
+        <!-- HEADER -->
+        <header class="mb-12 text-center relative">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <div class="absolute top-0 left-1/4 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute top-10 right-1/4 w-40 h-40 bg-amber-400 opacity-15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-0 left-1/2 w-48 h-48 bg-yellow-400 opacity-10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+
+            <div class="relative z-10 py-16">
+                <div class="inline-block bg-secondary/20 border border-secondary/40 px-4 py-1 rounded-full text-secondary text-sm font-semibold mb-6">
+                    <i class="fas fa-calendar-star mr-2"></i>
+                    <span data-es="CONCIERTO · SEPTIEMBRE 2026" data-en="CONCERT · SEPTEMBER 2026">CONCIERTO · SEPTIEMBRE 2026</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-300 to-secondary drop-shadow-lg">
+                    TALENTO PARA DIOS
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-bold mt-4 text-white" data-es="Padre Nuestro Challenge 🙏🎤" data-en="The Lord's Prayer Challenge 🙏🎤">
+                    Padre Nuestro Challenge 🙏🎤
+                </h2>
+                <p class="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-cyan-300" data-es="Bandas de todos los géneros suben al escenario con UNA sola misión: cantar su versión del Padre Nuestro." data-en="Bands of every genre take the stage with ONE mission: sing their version of The Lord's Prayer.">
+                    Bandas de todos los géneros suben al escenario con UNA sola misión: cantar su versión del Padre Nuestro.
+                </p>
+                <p class="text-base mt-4 italic text-accent" data-es="Rock, pop, rap, banda, electrónica, mariachi, balada... una oración, mil voces." data-en="Rock, pop, rap, banda, electronic, mariachi, ballad... one prayer, a thousand voices.">
+                    Rock, pop, rap, banda, electrónica, mariachi, balada... una oración, mil voces.
+                </p>
+            </div>
+        </header>
+
+        <!-- BARRA DE PROGRESO + COUNTDOWN -->
+        <section class="mb-12 bg-studio/80 backdrop-blur-sm rounded-xl shadow-stage p-8 border border-secondary/30 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-spotlight-gradient opacity-50"></div>
+            <div class="absolute bottom-0 left-0 w-full h-2 bg-spotlight-gradient opacity-50"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold mb-2 md:mb-0 text-secondary flex items-center gap-3">
+                    <i class="fas fa-bullseye text-secondary"></i>
+                    <span data-es="Meta del Concierto: $850,000 MXN" data-en="Concert Goal: $850,000 MXN">Meta del Concierto: $850,000 MXN</span>
+                </h2>
+                <p class="text-xl font-semibold text-accent flex items-center gap-2">
+                    <i class="fas fa-chart-line text-accent"></i>
+                    <span data-es="Recaudado: $182,400 MXN" data-en="Raised: $182,400 MXN">Recaudado: $182,400 MXN</span>
+                </p>
+            </div>
+
+            <div class="w-full bg-primary/60 rounded-full h-6 mb-2 overflow-hidden border border-secondary/40 relative">
+                <div class="bg-spotlight-gradient h-6 rounded-full shadow-spotlight" style="width: 21.5%"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+            </div>
+
+            <div class="flex justify-between text-sm text-white/80 px-2 mb-6">
+                <span data-es="21.5% completado" data-en="21.5% completed">21.5% completado</span>
+                <span data-es="318 patrocinadores" data-en="318 backers">318 patrocinadores</span>
+            </div>
+
+            <div class="text-center">
+                <p class="mb-4 text-white/90 italic text-lg" data-es="Faltan para el concierto:" data-en="Time until the concert:">Faltan para el concierto:</p>
+                <div id="countdown" class="grid grid-cols-4 gap-3 max-w-lg mx-auto mt-4 mb-6">
+                    <div class="bg-studio rounded-xl shadow-golden p-4 text-secondary border border-secondary/30">
+                        <div id="days" class="text-3xl md:text-4xl font-bold">--</div>
+                        <div class="text-xs uppercase font-semibold" data-es="Días" data-en="Days">Días</div>
+                    </div>
+                    <div class="bg-studio rounded-xl shadow-golden p-4 text-secondary border border-secondary/30">
+                        <div id="hours" class="text-3xl md:text-4xl font-bold">--</div>
+                        <div class="text-xs uppercase font-semibold" data-es="Horas" data-en="Hours">Horas</div>
+                    </div>
+                    <div class="bg-studio rounded-xl shadow-golden p-4 text-secondary border border-secondary/30">
+                        <div id="minutes" class="text-3xl md:text-4xl font-bold">--</div>
+                        <div class="text-xs uppercase font-semibold" data-es="Minutos" data-en="Minutes">Minutos</div>
+                    </div>
+                    <div class="bg-studio rounded-xl shadow-golden p-4 text-secondary border border-secondary/30">
+                        <div id="seconds" class="text-3xl md:text-4xl font-bold">--</div>
+                        <div class="text-xs uppercase font-semibold" data-es="Segundos" data-en="Seconds">Segundos</div>
+                    </div>
+                </div>
+                <button id="donateBtn" class="bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-4 px-12 rounded-xl text-lg transition duration-300 transform hover:scale-105 shadow-golden border border-secondary/30">
+                    <i class="fas fa-heart mr-2"></i>
+                    <span data-es="APOYAR EL CONCIERTO" data-en="SUPPORT THE CONCERT">APOYAR EL CONCIERTO</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- EL CHALLENGE -->
+        <section class="mb-12 bg-studio/80 backdrop-blur-sm rounded-xl shadow-stage p-8 border border-secondary/30 relative overflow-hidden">
+            <div class="absolute top-4 right-4 text-secondary/20 text-6xl animate-pulse">
+                <i class="fas fa-cross"></i>
+            </div>
+            <h2 class="text-3xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-400 to-secondary" data-es="¿Qué es el Padre Nuestro Challenge?" data-en="What is The Lord's Prayer Challenge?">
+                ¿Qué es el Padre Nuestro Challenge?
+            </h2>
+            <p class="text-lg text-center text-white/90 max-w-3xl mx-auto mb-8" data-es="Una oración. Infinitos géneros. Cada banda presenta su propia versión del Padre Nuestro en el estilo musical que mejor las representa: rock, pop, rap, banda, electrónica, jazz, balada o fusión. Pueden adaptar la letra siempre que se conserve la intención original de la oración que Jesús nos enseñó." data-en="One prayer. Infinite genres. Each band presents their own version of The Lord's Prayer in the musical style that represents them best: rock, pop, rap, banda, electronic, jazz, ballad or fusion. They may adapt the lyrics as long as they preserve the original intention of the prayer Jesus taught us.">
+                Una oración. Infinitos géneros. Cada banda presenta su propia versión del Padre Nuestro en el estilo musical que mejor las representa: rock, pop, rap, banda, electrónica, jazz, balada o fusión. Pueden adaptar la letra siempre que se conserve la intención original de la oración que Jesús nos enseñó.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-guitar text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary text-lg mb-2" data-es="Una sola letra base" data-en="One shared lyric">Una sola letra base</h3>
+                    <p class="text-sm text-white/80" data-es="El Padre Nuestro como punto de partida común para todas las bandas." data-en="The Lord's Prayer as the shared starting point for every band.">El Padre Nuestro como punto de partida común para todas las bandas.</p>
+                </div>
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-music text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary text-lg mb-2" data-es="Libertad de género" data-en="Genre freedom">Libertad de género</h3>
+                    <p class="text-sm text-white/80" data-es="Cada banda elige el estilo musical que mejor expresa su fe." data-en="Each band picks the style that best expresses their faith.">Cada banda elige el estilo musical que mejor expresa su fe.</p>
+                </div>
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-pen-fancy text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary text-lg mb-2" data-es="Adaptación con propósito" data-en="Purposeful adaptation">Adaptación con propósito</h3>
+                    <p class="text-sm text-white/80" data-es="Pueden modificar versos manteniendo siempre la intención original." data-en="Verses can be reshaped while keeping the original intention intact.">Pueden modificar versos manteniendo siempre la intención original.</p>
+                </div>
+            </div>
+
+            <blockquote class="mt-8 p-4 bg-secondary/10 border-l-4 border-secondary rounded-r-lg max-w-3xl mx-auto">
+                <p class="text-secondary italic font-semibold text-center text-lg" data-es='"Ustedes deben orar así: Padre nuestro que estás en los cielos…" — Mateo 6:9' data-en='"This, then, is how you should pray: Our Father in heaven…" — Matthew 6:9'>
+                    "Ustedes deben orar así: Padre nuestro que estás en los cielos…" — Mateo 6:9
+                </p>
+            </blockquote>
+        </section>
+
+        <!-- POR QUÉ APOYAR -->
+        <section class="mb-12 bg-studio/80 backdrop-blur-sm rounded-xl shadow-stage p-8 border border-secondary/30">
+            <h2 class="text-3xl font-bold mb-8 text-center text-secondary" data-es="¿Para qué se usa tu apoyo?" data-en="What does your support fund?">
+                ¿Para qué se usa tu apoyo?
+            </h2>
+            <p class="text-center mb-8 text-white/80 italic" data-es="Tu donación financia el concierto, no un edificio. Cada peso se traduce en escenario, sonido y almas alcanzadas." data-en="Your donation funds the concert, not a building. Every peso turns into stage, sound and souls reached.">
+                Tu donación financia el concierto, no un edificio. Cada peso se traduce en escenario, sonido y almas alcanzadas.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-map-marked-alt text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary mb-2" data-es="Sede y logística" data-en="Venue & logistics">Sede y logística</h3>
+                    <p class="text-sm text-white/80" data-es="Renta del recinto, permisos, seguridad y producción del evento." data-en="Venue rental, permits, security and event production.">Renta del recinto, permisos, seguridad y producción del evento.</p>
+                </div>
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-volume-up text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary mb-2" data-es="Sonido e iluminación" data-en="Sound & lighting">Sonido e iluminación</h3>
+                    <p class="text-sm text-white/80" data-es="Equipo profesional para que cada banda suene y se vea de impacto." data-en="Professional gear so every band sounds and looks powerful.">Equipo profesional para que cada banda suene y se vea de impacto.</p>
+                </div>
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-video text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary mb-2" data-es="Grabación y streaming" data-en="Recording & streaming">Grabación y streaming</h3>
+                    <p class="text-sm text-white/80" data-es="Multicámara y transmisión en vivo gratis para todo el mundo." data-en="Multi-camera capture and free live streaming worldwide.">Multicámara y transmisión en vivo gratis para todo el mundo.</p>
+                </div>
+                <div class="bg-primary/40 rounded-xl p-6 border border-secondary/20 text-center">
+                    <i class="fas fa-users text-4xl text-secondary mb-3"></i>
+                    <h3 class="font-bold text-secondary mb-2" data-es="Apoyo a las bandas" data-en="Band support">Apoyo a las bandas</h3>
+                    <p class="text-sm text-white/80" data-es="Producción musical, ensayos y traslado de los participantes." data-en="Music production, rehearsals and travel for participants.">Producción musical, ensayos y traslado de los participantes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NIVELES DE APOYO -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center text-secondary" data-es="Niveles de Patrocinio" data-en="Sponsorship Levels">Niveles de Patrocinio</h2>
+            <p class="text-center mb-8 text-white/80 italic" data-es="Elige cómo quieres ser parte de este concierto histórico" data-en="Choose how you want to be part of this historic concert">Elige cómo quieres ser parte de este concierto histórico</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Fan -->
+                <div class="bg-studio/90 rounded-xl shadow-stage p-6 border border-secondary/40 relative overflow-hidden hover:shadow-spotlight transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-spotlight-gradient"></div>
+                    <div class="text-center mb-4 mt-2">
+                        <i class="fas fa-heart text-4xl text-secondary mb-3"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-secondary text-center" data-es="Fan VIP" data-en="VIP Fan">Fan VIP</h3>
+                    <p class="text-2xl font-bold mb-4 text-accent text-center">$500 MXN</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i><span data-es="Mención en redes del concierto" data-en="Shout-out on concert social media">Mención en redes del concierto</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i><span data-es="Acceso al backstage virtual" data-en="Virtual backstage access">Acceso al backstage virtual</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i><span data-es="Certificado digital de apoyo" data-en="Digital support certificate">Certificado digital de apoyo</span></li>
+                    </ul>
+                    <button class="select-tier w-full bg-secondary hover:bg-secondary/80 text-primary font-bold py-2 px-4 rounded-lg" data-amount="500"><span data-es="Seleccionar" data-en="Select">Seleccionar</span></button>
+                </div>
+
+                <!-- Aliado -->
+                <div class="bg-studio/90 rounded-xl shadow-stage p-6 border border-secondary/40 relative overflow-hidden hover:shadow-spotlight transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-spotlight-gradient"></div>
+                    <div class="text-center mb-4 mt-2">
+                        <i class="fas fa-handshake text-4xl text-secondary mb-3"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-secondary text-center" data-es="Aliado del Concierto" data-en="Concert Partner">Aliado del Concierto</h3>
+                    <p class="text-2xl font-bold mb-4 text-accent text-center">$2,500 MXN</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i><span data-es="Todo lo del nivel anterior" data-en="Everything from previous level">Todo lo del nivel anterior</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-ticket-alt text-secondary"></i><span data-es="2 entradas preferentes al concierto" data-en="2 preferred concert tickets">2 entradas preferentes al concierto</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-gift text-secondary"></i><span data-es="Kit oficial del Padre Nuestro Challenge" data-en="Official Challenge merch kit">Kit oficial del Padre Nuestro Challenge</span></li>
+                    </ul>
+                    <button class="select-tier w-full bg-secondary hover:bg-secondary/80 text-primary font-bold py-2 px-4 rounded-lg" data-amount="2500"><span data-es="Seleccionar" data-en="Select">Seleccionar</span></button>
+                </div>
+
+                <!-- Productor -->
+                <div class="bg-studio/90 rounded-xl shadow-stage p-6 border border-secondary/40 relative overflow-hidden hover:shadow-spotlight transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-spotlight-gradient"></div>
+                    <div class="text-center mb-4 mt-2">
+                        <i class="fas fa-star text-4xl text-secondary mb-3"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-secondary text-center" data-es="Productor Asociado" data-en="Associate Producer">Productor Asociado</h3>
+                    <p class="text-2xl font-bold mb-4 text-accent text-center">$10,000 MXN</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i><span data-es="Todo lo del nivel anterior" data-en="Everything from previous level">Todo lo del nivel anterior</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-crown text-secondary"></i><span data-es="Acceso VIP backstage el día del show" data-en="VIP backstage access on show day">Acceso VIP backstage el día del show</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-microphone text-secondary"></i><span data-es="Meet & greet con bandas" data-en="Meet & greet with the bands">Meet & greet con bandas</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-star text-secondary"></i><span class="text-secondary font-semibold" data-es="Nombre en créditos del concierto" data-en="Name in concert credits">Nombre en créditos del concierto</span></li>
+                    </ul>
+                    <button class="select-tier w-full bg-secondary hover:bg-secondary/80 text-primary font-bold py-2 px-4 rounded-lg" data-amount="10000"><span data-es="Seleccionar" data-en="Select">Seleccionar</span></button>
+                </div>
+
+                <!-- Patrocinador Principal -->
+                <div class="bg-studio/90 rounded-xl shadow-stage p-6 border border-secondary/40 relative overflow-hidden hover:shadow-spotlight transition-all duration-300">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 via-secondary to-green-400"></div>
+                    <div class="absolute top-4 right-4 bg-green-400/30 text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full" data-es="Solo 5" data-en="Only 5">Solo 5</div>
+                    <div class="text-center mb-4 mt-2">
+                        <i class="fas fa-trophy text-4xl text-green-400 mb-3"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-green-400 text-center" data-es="Patrocinador Principal" data-en="Headline Sponsor">Patrocinador Principal</h3>
+                    <p class="text-2xl font-bold mb-4 text-accent text-center">$50,000+ MXN</p>
+                    <ul class="space-y-2 mb-6 text-sm">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i><span data-es="Todo lo del nivel anterior" data-en="Everything from previous level">Todo lo del nivel anterior</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-bullhorn text-green-400"></i><span data-es="Logo en escenario y pantalla principal" data-en="Logo on stage and main screen">Logo en escenario y pantalla principal</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-tv text-green-400"></i><span data-es="Mención en transmisión en vivo" data-en="Mention in live broadcast">Mención en transmisión en vivo</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-handshake text-green-400"></i><span class="text-green-400 font-semibold" data-es="Branding en todo el material del concierto" data-en="Branding across all concert material">Branding en todo el material del concierto</span></li>
+                    </ul>
+                    <button class="select-tier w-full bg-gradient-to-r from-green-400 to-secondary hover:from-green-500 hover:to-amber-400 text-primary font-bold py-2 px-4 rounded-lg flex items-center justify-center gap-2" data-amount="50000">
+                        <i class="fas fa-handshake"></i>
+                        <span data-es="QUIERO PATROCINAR" data-en="I WANT TO SPONSOR">QUIERO PATROCINAR</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLES DEL CONCIERTO -->
+        <section class="mb-12 bg-studio/80 backdrop-blur-sm rounded-xl shadow-stage p-8 border border-secondary/30 relative overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none opacity-10">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-secondary to-transparent animate-pulse"></div>
+            </div>
+            <div class="text-center relative z-10">
+                <h2 class="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-400 to-secondary" data-es="🎉 El Concierto 🎉" data-en="🎉 The Concert 🎉">🎉 El Concierto 🎉</h2>
+                <h3 class="text-2xl font-bold mb-4 text-secondary" data-es="Septiembre 2026 · Padre Nuestro Challenge en vivo" data-en="September 2026 · The Lord's Prayer Challenge live">Septiembre 2026 · Padre Nuestro Challenge en vivo</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    <div class="bg-primary/60 rounded-xl p-6 border border-secondary/40">
+                        <i class="fas fa-calendar-alt text-4xl text-secondary mb-3"></i>
+                        <h4 class="text-lg font-bold text-secondary mb-1" data-es="Fecha" data-en="Date">Fecha</h4>
+                        <p class="text-white" data-es="Septiembre 2026" data-en="September 2026">Septiembre 2026</p>
+                        <p class="text-xs text-accent" data-es="Día por confirmar" data-en="Day TBD">Día por confirmar</p>
+                    </div>
+                    <div class="bg-primary/60 rounded-xl p-6 border border-secondary/40">
+                        <i class="fas fa-map-marker-alt text-4xl text-secondary mb-3"></i>
+                        <h4 class="text-lg font-bold text-secondary mb-1" data-es="Sede" data-en="Venue">Sede</h4>
+                        <p class="text-white font-bold" data-es="CDMX" data-en="Mexico City">CDMX</p>
+                        <p class="text-xs text-accent" data-es="Recinto por anunciar" data-en="Venue to be announced">Recinto por anunciar</p>
+                    </div>
+                    <div class="bg-primary/60 rounded-xl p-6 border border-secondary/40">
+                        <i class="fas fa-guitar text-4xl text-secondary mb-3"></i>
+                        <h4 class="text-lg font-bold text-secondary mb-1" data-es="Bandas" data-en="Bands">Bandas</h4>
+                        <p class="text-white font-bold" data-es="10+ géneros" data-en="10+ genres">10+ géneros</p>
+                        <p class="text-xs text-accent" data-es="Una oración, mil voces" data-en="One prayer, a thousand voices">Una oración, mil voces</p>
+                    </div>
+                    <div class="bg-primary/60 rounded-xl p-6 border border-secondary/40">
+                        <i class="fas fa-gift text-4xl text-secondary mb-3"></i>
+                        <h4 class="text-lg font-bold text-secondary mb-1" data-es="Acceso" data-en="Access">Acceso</h4>
+                        <p class="text-white font-bold" data-es="Streaming GRATIS" data-en="FREE Streaming">Streaming GRATIS</p>
+                        <p class="text-xs text-accent" data-es="Para todo el mundo" data-en="For the whole world">Para todo el mundo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARTIR -->
+        <section class="mb-10 text-center">
+            <div class="bg-secondary/10 px-6 py-8 rounded-xl shadow-stage mx-auto max-w-3xl border border-secondary/30">
+                <h3 class="font-bold text-2xl text-secondary mb-4" data-es="¡Ayúdanos a correr la voz!" data-en="Help us spread the word!">¡Ayúdanos a correr la voz!</h3>
+                <p class="mb-6 text-white" data-es="Comparte el Padre Nuestro Challenge y llena el escenario en septiembre" data-en="Share the Lord's Prayer Challenge and fill the stage in September">Comparte el Padre Nuestro Challenge y llena el escenario en septiembre</p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <a href="#" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 px-6 py-3 rounded-lg" onclick="shareOnSocial('facebook'); return false;"><i class="fab fa-facebook-f mr-2"></i>Facebook</a>
+                    <a href="#" class="text-white bg-black hover:bg-gray-800 px-6 py-3 rounded-lg" onclick="shareOnSocial('twitter'); return false;"><i class="fab fa-x-twitter mr-2"></i>X</a>
+                    <a href="#" class="text-white bg-[#25D366] hover:bg-[#25D366]/90 px-6 py-3 rounded-lg" onclick="shareOnSocial('whatsapp'); return false;"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+                    <a href="#" class="text-white bg-gray-500 hover:bg-gray-600 px-6 py-3 rounded-lg" onclick="shareByEmail(); return false;"><i class="fas fa-envelope mr-2"></i>Email</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="mb-12 text-center">
+            <div class="bg-studio/80 backdrop-blur-sm rounded-xl shadow-stage p-8 border border-secondary/30 relative overflow-hidden">
+                <div class="absolute top-0 left-1/4 w-32 h-32 bg-secondary opacity-20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-0 right-1/4 w-40 h-40 bg-amber-400 opacity-15 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-400 to-secondary" data-es="Septiembre se acerca" data-en="September is coming">Septiembre se acerca</h2>
+                <p class="text-xl mb-6 text-white" data-es="Sé parte del concierto que pondrá el Padre Nuestro en todos los géneros" data-en="Be part of the concert that brings The Lord's Prayer into every genre">Sé parte del concierto que pondrá el Padre Nuestro en todos los géneros</p>
+                <button id="donateBtn2" class="bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-4 px-12 rounded-xl text-xl transition duration-300 transform hover:scale-105 shadow-golden border border-secondary/30">
+                    <i class="fas fa-heart mr-3"></i>
+                    <span data-es="APOYAR EL CONCIERTO" data-en="SUPPORT THE CONCERT">APOYAR EL CONCIERTO</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DONACIÓN -->
+        <div id="donationForm" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+            <div class="bg-studio rounded-xl p-8 w-full max-w-md mx-4 relative border border-secondary/30 shadow-stage">
+                <button id="closeForm" class="absolute top-4 right-4 text-white/60 hover:text-white"><i class="fas fa-times text-xl"></i></button>
+                <h3 class="text-2xl font-bold mb-6 text-center text-secondary" data-es="Apoya el Concierto" data-en="Support the Concert">Apoya el Concierto</h3>
+                <form id="form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2" data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
+                        <input type="text" required class="w-full rounded-lg border border-secondary/30 px-4 py-3 bg-primary/50 text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2" data-es="Correo Electrónico" data-en="Email">Correo Electrónico</label>
+                        <input type="email" required class="w-full rounded-lg border border-secondary/30 px-4 py-3 bg-primary/50 text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2" data-es="Monto (MXN)" data-en="Amount (MXN)">Monto (MXN)</label>
+                        <input type="number" id="amount" min="1" required class="w-full rounded-lg border border-secondary/30 px-4 py-3 bg-primary/50 text-white focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" class="amount-btn px-4 py-2 bg-primary/70 text-white rounded-lg hover:bg-secondary hover:text-primary" data-amount="500">$500</button>
+                        <button type="button" class="amount-btn px-4 py-2 bg-primary/70 text-white rounded-lg hover:bg-secondary hover:text-primary" data-amount="2500">$2,500</button>
+                        <button type="button" class="amount-btn px-4 py-2 bg-primary/70 text-white rounded-lg hover:bg-secondary hover:text-primary" data-amount="10000">$10,000</button>
+                    </div>
+                    <button type="submit" class="w-full bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-3 rounded-lg" data-es="CONFIRMAR APOYO" data-en="CONFIRM SUPPORT">CONFIRMAR APOYO</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="mt-16 text-center text-white/60 border-t border-secondary/30 pt-8">
+            <p data-es="© 2026 Talento para Dios · Padre Nuestro Challenge" data-en="© 2026 Talent for God · The Lord's Prayer Challenge">© 2026 Talento para Dios · Padre Nuestro Challenge</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="#" class="hover:text-secondary text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-secondary text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-secondary text-2xl"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-secondary text-2xl"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let preferredLanguage = 'es';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('btn-es').addEventListener('click', () => changeLanguage('es'));
+            document.getElementById('btn-en').addEventListener('click', () => changeLanguage('en'));
+            changeLanguage('es');
+            setupCountdown();
+            setupDonationForm();
+        });
+
+        function changeLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            preferredLanguage = lang;
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+            if (lang === 'es') {
+                btnEs.classList.add('bg-secondary', 'text-primary');
+                btnEs.classList.remove('bg-studio', 'text-gray-300');
+                btnEn.classList.remove('bg-secondary', 'text-primary');
+                btnEn.classList.add('bg-studio', 'text-gray-300');
+            } else {
+                btnEn.classList.add('bg-secondary', 'text-primary');
+                btnEn.classList.remove('bg-studio', 'text-gray-300');
+                btnEs.classList.remove('bg-secondary', 'text-primary');
+                btnEs.classList.add('bg-studio', 'text-gray-300');
+            }
+        }
+
+        function setupCountdown() {
+            const target = new Date('2026-09-19T20:00:00-06:00').getTime();
+            const tick = () => {
+                const distance = target - Date.now();
+                if (distance < 0) return;
+                const d = Math.floor(distance / 86400000);
+                const h = Math.floor((distance % 86400000) / 3600000);
+                const m = Math.floor((distance % 3600000) / 60000);
+                const s = Math.floor((distance % 60000) / 1000);
+                document.getElementById('days').textContent = d;
+                document.getElementById('hours').textContent = h < 10 ? '0' + h : h;
+                document.getElementById('minutes').textContent = m < 10 ? '0' + m : m;
+                document.getElementById('seconds').textContent = s < 10 ? '0' + s : s;
+            };
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        function setupDonationForm() {
+            const form = document.getElementById('donationForm');
+            const amount = document.getElementById('amount');
+            const open = (preset) => {
+                if (preset) amount.value = preset;
+                form.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+            const close = () => {
+                form.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            };
+
+            document.getElementById('donateBtn').addEventListener('click', () => open());
+            document.getElementById('donateBtn2').addEventListener('click', () => open());
+            document.getElementById('closeForm').addEventListener('click', close);
+            form.addEventListener('click', (e) => { if (e.target === form) close(); });
+
+            document.querySelectorAll('.select-tier').forEach(btn => {
+                btn.addEventListener('click', () => open(btn.dataset.amount));
+            });
+
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    amount.value = btn.dataset.amount;
+                    document.querySelectorAll('.amount-btn').forEach(b => {
+                        b.classList.remove('bg-secondary', 'text-primary');
+                        b.classList.add('bg-primary/70', 'text-white');
+                    });
+                    btn.classList.add('bg-secondary', 'text-primary');
+                    btn.classList.remove('bg-primary/70', 'text-white');
+                });
+            });
+
+            document.getElementById('form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const msg = preferredLanguage === 'en'
+                    ? 'Thank you for supporting the concert! You will receive a confirmation email shortly.'
+                    : '¡Gracias por apoyar el concierto! Recibirás un correo de confirmación en breve.';
+                alert(msg);
+                close();
+            });
+        }
+
+        function shareOnSocial(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(preferredLanguage === 'en'
+                ? 'Support the Lord\'s Prayer Challenge - Talent for God Concert September 2026!'
+                : '¡Apoya el Padre Nuestro Challenge - Concierto Talento para Dios Septiembre 2026!');
+            const map = {
+                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+                twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+                whatsapp: `https://api.whatsapp.com/send?text=${title}%20${url}`
+            };
+            if (map[platform]) window.open(map[platform], '_blank', 'width=600,height=400');
+        }
+
+        function shareByEmail() {
+            const subject = encodeURIComponent(preferredLanguage === 'en' ? 'Support Talent for God Concert' : 'Apoya el Concierto Talento para Dios');
+            const body = encodeURIComponent((preferredLanguage === 'en'
+                ? 'Check out the Lord\'s Prayer Challenge concert: '
+                : 'Mira el concierto Padre Nuestro Challenge: ') + window.location.href);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
