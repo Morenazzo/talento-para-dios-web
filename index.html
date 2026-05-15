@@ -308,7 +308,7 @@
             </blockquote>
 
             <div class="text-center mt-10">
-                <a href="votacion.html" class="inline-block bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-3 px-8 rounded-full text-sm uppercase tracking-[0.2em] transition transform hover:scale-105 shadow-golden">
+                <a href="#artistas" class="inline-block bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-3 px-8 rounded-full text-sm uppercase tracking-[0.2em] transition transform hover:scale-105 shadow-golden">
                     <i class="fas fa-guitar mr-2"></i><span data-es="Conoce a los artistas que tocarán" data-en="Meet the performing artists">Conoce a los artistas que tocarán</span>
                 </a>
             </div>
@@ -406,7 +406,53 @@
             </div>
         </section>
 
-        <section class="mb-16">
+        <section id="artistas" class="mb-16">
+            <p class="text-xs uppercase tracking-[0.25em] text-secondary mb-3 text-center" data-es="Lineup Confirmado · Hacienda de Paz, Puebla" data-en="Confirmed Lineup · Hacienda de Paz, Puebla">Lineup Confirmado · Hacienda de Paz, Puebla</p>
+            <h2 class="font-display text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-warm via-secondary to-warm mb-4" data-es="Estas Bandas Tocarán" data-en="These Bands Will Perform">Estas Bandas Tocarán</h2>
+            <p class="text-center mb-10 text-white/70 max-w-2xl mx-auto" data-es="Las bandas y artistas que subirán a la pasarela del concierto. Escucha lo que viene." data-en="The bands and artists who will walk the concert runway. Listen to what's coming.">Las bandas y artistas que subirán a la pasarela del concierto. Escucha lo que viene.</p>
+            <div id="artistsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <section id="boletos" class="mb-16">
+            <p class="text-xs uppercase tracking-[0.25em] text-secondary mb-3 text-center" data-es="Boletos" data-en="Tickets">Boletos</p>
+            <h2 class="font-display text-4xl font-bold text-center text-warm mb-4" data-es="Asegura tu Lugar" data-en="Secure Your Spot">Asegura tu Lugar</h2>
+            <p class="text-center mb-10 text-white/70 max-w-2xl mx-auto" data-es="Una noche que cambiará vidas en la Hacienda de Paz, Puebla · Septiembre 2026" data-en="A life-changing night at Hacienda de Paz, Puebla · September 2026">Una noche que cambiará vidas en la Hacienda de Paz, Puebla · Septiembre 2026</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-studio/80 rounded-2xl border border-secondary/50 p-7 text-center relative shadow-spotlight transform md:-translate-y-2">
+                    <div class="absolute top-3 right-3 bg-secondary text-primary text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-widest" data-es="Mejor precio" data-en="Best price">Mejor precio</div>
+                    <i class="fas fa-bolt text-3xl text-secondary mb-3"></i>
+                    <h3 class="font-display text-2xl font-bold text-warm" data-es="Preventa" data-en="Presale">Preventa</h3>
+                    <p class="font-impact text-5xl text-secondary my-3">$300<span class="text-base text-white/50 align-top ml-1">MXN</span></p>
+                    <p class="text-sm text-white/60 mb-6" data-es="Precio anticipado por tiempo limitado" data-en="Early-bird limited-time price">Precio anticipado por tiempo limitado</p>
+                    <button class="select-tier w-full bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-3 rounded-full text-sm uppercase tracking-[0.2em] transition transform hover:scale-105" data-amount="300">
+                        <span data-es="Comprar preventa" data-en="Buy presale">Comprar preventa</span>
+                    </button>
+                </div>
+
+                <div class="bg-studio/70 rounded-2xl border border-secondary/20 p-7 text-center">
+                    <i class="fas fa-ticket-alt text-3xl text-secondary mb-3"></i>
+                    <h3 class="font-display text-2xl font-bold text-warm" data-es="En el evento" data-en="At the event">En el evento</h3>
+                    <p class="font-impact text-5xl text-secondary my-3">$500<span class="text-base text-white/50 align-top ml-1">MXN</span></p>
+                    <p class="text-sm text-white/60 mb-6" data-es="Precio en taquilla el día del concierto" data-en="Box-office price on concert day">Precio en taquilla el día del concierto</p>
+                    <button class="select-tier w-full bg-secondary/10 hover:bg-secondary hover:text-primary text-secondary border border-secondary/40 font-bold py-3 rounded-full text-sm uppercase tracking-[0.2em] transition" data-amount="500">
+                        <span data-es="Reservar" data-en="Reserve">Reservar</span>
+                    </button>
+                </div>
+
+                <div class="bg-studio/70 rounded-2xl border border-secondary/20 p-7 text-center">
+                    <i class="fas fa-star text-3xl text-secondary mb-3"></i>
+                    <h3 class="font-display text-2xl font-bold text-warm" data-es="Más opciones" data-en="More options">Más opciones</h3>
+                    <p class="font-impact text-5xl text-secondary my-3">VIP<span class="text-base text-white/50 align-top ml-1">+</span></p>
+                    <p class="text-sm text-white/60 mb-6" data-es="Paquetes VIP, patrocinio y adopción de bandas" data-en="VIP, sponsorship and band adoption packages">Paquetes VIP, patrocinio y adopción de bandas</p>
+                    <a href="#paquetes" class="block w-full bg-secondary/10 hover:bg-secondary hover:text-primary text-secondary border border-secondary/40 font-bold py-3 rounded-full text-sm uppercase tracking-[0.2em] transition">
+                        <span data-es="Ver paquetes" data-en="See packages">Ver paquetes</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="paquetes" class="mb-16">
             <p class="text-xs uppercase tracking-widest text-secondary mb-3 text-center" data-es="PAQUETES DE PREVENTA" data-en="PRESALE PACKAGES">PAQUETES DE PREVENTA</p>
             <h2 class="font-display text-4xl font-bold text-center text-warm mb-4" data-es="Niveles de Patrocinio" data-en="Sponsorship Levels">Niveles de Patrocinio</h2>
             <p class="text-center mb-10 text-white/70 max-w-2xl mx-auto" data-es="Elige cómo quieres ser parte de este concierto histórico" data-en="Choose how you want to be part of this historic concert">Elige cómo quieres ser parte de este concierto histórico</p>
@@ -612,7 +658,38 @@
             setupCountdown();
             setupDonationForm();
             setupAudioPlayer();
+            renderArtists();
         });
+
+        function renderArtists() {
+            const grid = document.getElementById('artistsGrid');
+            if (!grid) return;
+            const ARTISTS = [
+                { titulo: 'Así Vivir', banda: 'Dfive feat. Raúl Sánchez', genero: 'Banda', type: 'youtube', src: '_yYo85w3jNg' },
+                { titulo: 'Fruto', banda: 'Dfive', genero: 'Banda', type: 'youtube', src: 'I2Di63CNpBQ' },
+                { titulo: 'Volver a Casa', banda: 'Songfield', genero: 'Banda', type: 'youtube', src: '_o6vzd8Pmro' },
+                { titulo: 'Cara a Cara — María (Yo elijo a Cristo)', banda: 'Songfield ft. Tony Rosher', genero: 'Banda', type: 'youtube', src: 'iJPDP8brh-8' },
+                { titulo: 'Santo por Siempre (En Vivo)', banda: 'Adoración La IBI', genero: 'Adoración', type: 'youtube', src: '1CxEg0H6Q-4' },
+                { titulo: 'Varona — Original', banda: 'Tony Rosher & Aldo Teomitzi', genero: 'Banda', type: 'youtube', src: '0HvqGhcFWp4' },
+                { titulo: 'Eres Bueno (En Vivo)', banda: 'Artista invitado', genero: 'Adoración', type: 'spotify', kind: 'album', src: '7DIZGVqdmnBgUavHUrKXCS' },
+                { titulo: 'Amor Sin Medida', banda: 'Artista invitado', genero: 'Adoración', type: 'spotify', kind: 'album', src: '3ShTGH7xncbSSHbXsGBNnn' },
+                { titulo: 'Volver a Casa', banda: 'Artista invitado', genero: 'Adoración', type: 'spotify', kind: 'track', src: '08qPjwmhEasyWZ22wC71tA' }
+            ];
+            grid.innerHTML = '';
+            ARTISTS.forEach(s => {
+                const media = s.type === 'youtube'
+                    ? `<iframe class="w-full rounded-xl border border-secondary/20 aspect-video" src="https://www.youtube.com/embed/${s.src}" frameborder="0" allowfullscreen loading="lazy"></iframe>`
+                    : `<iframe class="w-full rounded-xl" style="height:${s.kind === 'track' ? '152' : '352'}px" src="https://open.spotify.com/embed/${s.kind}/${s.src}" frameborder="0" allow="encrypted-media" loading="lazy"></iframe>`;
+                const card = document.createElement('div');
+                card.className = 'bg-studio/80 rounded-2xl border border-secondary/20 p-5 shadow-stage flex flex-col';
+                card.innerHTML = `
+                    <div class="mb-4">${media}</div>
+                    <span class="inline-block self-start text-[10px] uppercase tracking-[0.15em] bg-neon/15 text-neon px-2.5 py-0.5 rounded-full mb-2">${s.genero}</span>
+                    <h3 class="font-display font-bold text-lg text-warm leading-tight">${s.titulo}</h3>
+                    <p class="text-sm text-white/55">${s.banda}</p>`;
+                grid.appendChild(card);
+            });
+        }
 
         function setupAudioPlayer() {
             const audio = document.getElementById('jingleAudio');
