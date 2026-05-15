@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación · Padre Nuestro Challenge — Talento para Dios</title>
+    <meta name="description" content="Vota por tu versión favorita del Padre Nuestro Challenge. La comunidad elige las bandas que subirán a la pasarela del concierto de septiembre 2026.">
+    <link rel="icon" type="image/png" href="public/logotipo talento para Dios.png">
+    <meta name="theme-color" content="#04060C">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: { primary:'#04060C', deep:'#000000', midnight:'#070C1C', secondary:'#E5B834', warm:'#FFD86B', accent:'#F0B83A', studio:'#0C0F18', spotlight:'#FFEFA8', neon:'#3DD9FF' },
+                fontFamily: { display:['"Playfair Display"','serif'], impact:['Anton','Impact','sans-serif'], body:['Inter','system-ui','sans-serif'] },
+                backgroundImage: {
+                    'cinema-gradient':'radial-gradient(ellipse at 50% -20%, rgba(229,184,52,0.05) 0%, rgba(7,12,28,0.99) 40%, #000 100%)',
+                    'spotlight-gradient':'linear-gradient(135deg, #FFEFA8 0%, #FFD86B 45%, #E5B834 100%)'
+                },
+                boxShadow: { 'spotlight':'0 0 80px rgba(229,184,52,0.45)', 'stage':'0 25px 60px rgba(0,0,0,0.7)', 'golden':'0 4px 30px rgba(229,184,52,0.3)' }
+            }}
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+        .font-display { font-family:'Playfair Display',serif; }
+        .font-impact { font-family:'Anton',Impact,sans-serif; letter-spacing:0.02em; }
+    </style>
+</head>
+<body class="bg-cinema-gradient text-white/95 min-h-screen font-body">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+
+        <nav class="flex justify-between items-center mb-10 gap-4">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="public/logotipo talento para Dios.png" alt="Talento para Dios" class="h-12 md:h-14 w-auto object-contain transition group-hover:scale-105">
+                <div class="hidden sm:block leading-tight">
+                    <p class="font-impact text-sm md:text-base text-secondary tracking-wider uppercase">Talento para Dios</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-white/45" data-es="Padre Nuestro Challenge" data-en="The Lord's Prayer Challenge">Padre Nuestro Challenge</p>
+                </div>
+            </a>
+            <a href="index.html" class="text-secondary text-sm font-semibold hover:text-warm transition flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i><span data-es="Volver al inicio" data-en="Back home">Volver al inicio</span>
+            </a>
+        </nav>
+
+        <header class="text-center mb-12">
+            <p class="text-xs uppercase tracking-[0.25em] text-secondary mb-3" data-es="Votación de la Comunidad" data-en="Community Vote">Votación de la Comunidad</p>
+            <h1 class="font-display text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-warm via-secondary to-warm" data-es="Padre Nuestro Challenge" data-en="The Lord's Prayer Challenge">Padre Nuestro Challenge</h1>
+            <p class="text-base md:text-lg mt-5 max-w-2xl mx-auto text-white/75 leading-relaxed" data-es="Escucha las versiones y vota por tus favoritas. Las más votadas, junto al Comité de Ética y Música, subirán a la pasarela del concierto en septiembre 2026." data-en="Listen to the versions and vote for your favorites. The most voted, alongside the Ethics & Music Committee, will walk the runway at the September 2026 concert.">
+                Escucha las versiones y vota por tus favoritas. Las más votadas, junto al Comité de Ética y Música, subirán a la pasarela del concierto en septiembre 2026.
+            </p>
+            <div class="inline-flex items-center gap-2 bg-midnight border border-secondary/30 px-4 py-1.5 rounded-full text-xs text-white/60 mt-6">
+                <i class="fas fa-circle-info text-secondary"></i>
+                <span data-es="1 voto por canción · puedes votar por varias" data-en="1 vote per song · you can vote for several">1 voto por canción · puedes votar por varias</span>
+            </div>
+        </header>
+
+        <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"></div>
+
+        <section class="text-center bg-studio/70 rounded-2xl border border-secondary/20 p-8 mb-12">
+            <h2 class="font-display text-2xl font-bold text-warm mb-3" data-es="¿Tienes una banda?" data-en="Have a band?">¿Tienes una banda?</h2>
+            <p class="text-white/70 mb-6 max-w-xl mx-auto" data-es="Sube tu versión del Padre Nuestro en el género que te represente y entra al challenge." data-en="Upload your version of The Lord's Prayer in your genre and join the challenge.">Sube tu versión del Padre Nuestro en el género que te represente y entra al challenge.</p>
+            <a href="mailto:info@verymuch.ai?subject=Quiero%20participar%20en%20el%20Padre%20Nuestro%20Challenge" class="inline-block bg-spotlight-gradient hover:shadow-spotlight text-primary font-bold py-3 px-8 rounded-full text-sm uppercase tracking-[0.2em] transition transform hover:scale-105 shadow-golden">
+                <i class="fas fa-music mr-2"></i><span data-es="Inscribir mi banda" data-en="Submit my band">Inscribir mi banda</span>
+            </a>
+        </section>
+
+        <footer class="text-center text-white/40 border-t border-secondary/15 pt-8 pb-4 text-xs">
+            <p>© 2026 · Talento para Dios · Padre Nuestro Challenge</p>
+        </footer>
+    </div>
+
+    <script>
+        // ===== LISTA DE CANCIONES =====
+        // Para producción: cambia "type" a "suno" o "youtube" y pon la URL en "src".
+        // type: "mp4"  -> archivo local (demo)
+        // type: "suno" -> pega el enlace embed de Suno (https://suno.com/embed/XXXX)
+        // type: "youtube" -> pega el ID o URL de YouTube
+        const SONGS = [
+            { id: 'opera-gospel-1', titulo: 'Padre Nuestro — Ópera Gospel I', banda: 'Versión Ópera Gospel', genero: 'Ópera Gospel', type: 'mp4', src: 'public/challenge/opera-gospel-1.mp4' },
+            { id: 'opera-gospel-2', titulo: 'Padre Nuestro — Ópera Gospel II', banda: 'Versión Ópera Gospel', genero: 'Ópera Gospel', type: 'mp4', src: 'public/challenge/opera-gospel-2.mp4' },
+            { id: 'opera-gospel-3', titulo: 'Padre Nuestro — Ópera Gospel III', banda: 'Versión Ópera Gospel', genero: 'Ópera Gospel', type: 'mp4', src: 'public/challenge/opera-gospel-3.mp4' }
+        ];
+
+        const VOTES_KEY = 'tpd_votes_v1';
+        const getVotes = () => JSON.parse(localStorage.getItem(VOTES_KEY) || '{}');
+        const setVotes = (v) => localStorage.setItem(VOTES_KEY, JSON.stringify(v));
+
+        function render() {
+            const votes = getVotes();
+            const grid = document.getElementById('grid');
+            grid.innerHTML = '';
+            SONGS.forEach(s => {
+                const voted = !!votes[s.id];
+                const count = votes[s.id] ? votes[s.id].count : (s.baseVotes || 0);
+                const media = s.type === 'mp4'
+                    ? `<video controls preload="metadata" class="w-full rounded-xl border border-secondary/20 bg-black aspect-video"><source src="${s.src}" type="video/mp4"></video>`
+                    : s.type === 'youtube'
+                    ? `<iframe class="w-full rounded-xl border border-secondary/20 aspect-video" src="https://www.youtube.com/embed/${s.src}" frameborder="0" allowfullscreen></iframe>`
+                    : `<iframe class="w-full rounded-xl border border-secondary/20" style="height:240px" src="${s.src}" frameborder="0"></iframe>`;
+                const card = document.createElement('div');
+                card.className = 'bg-studio/80 rounded-2xl border border-secondary/20 p-5 shadow-stage flex flex-col';
+                card.innerHTML = `
+                    <div class="mb-4">${media}</div>
+                    <span class="inline-block self-start text-[10px] uppercase tracking-[0.15em] bg-neon/15 text-neon px-2.5 py-0.5 rounded-full mb-2">${s.genero}</span>
+                    <h3 class="font-display font-bold text-lg text-warm leading-tight">${s.titulo}</h3>
+                    <p class="text-sm text-white/55 mb-4">${s.banda}</p>
+                    <div class="mt-auto flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 text-secondary">
+                            <i class="fas fa-fire"></i>
+                            <span class="font-impact text-xl" id="count-${s.id}">${count}</span>
+                            <span class="text-[11px] text-white/45 uppercase tracking-wider" data-es="votos" data-en="votes">votos</span>
+                        </div>
+                        <button data-id="${s.id}" class="vote-btn ${voted ? 'bg-secondary/15 text-secondary border border-secondary/40' : 'bg-spotlight-gradient text-primary shadow-golden'} font-bold py-2 px-5 rounded-full text-sm uppercase tracking-wider transition hover:scale-105">
+                            <i class="fas ${voted ? 'fa-check' : 'fa-heart'} mr-1.5"></i>${voted ? 'Votado' : 'Votar'}
+                        </button>
+                    </div>`;
+                grid.appendChild(card);
+            });
+            document.querySelectorAll('.vote-btn').forEach(b => b.addEventListener('click', () => toggleVote(b.dataset.id)));
+        }
+
+        function toggleVote(id) {
+            const votes = getVotes();
+            const song = SONGS.find(s => s.id === id);
+            const base = song.baseVotes || 0;
+            if (votes[id]) {
+                delete votes[id];
+            } else {
+                votes[id] = { count: base + 1, at: Date.now() };
+            }
+            setVotes(votes);
+            render();
+        }
+
+        render();
+    </script>
+</body>
+</html>
