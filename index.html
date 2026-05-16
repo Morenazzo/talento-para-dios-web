@@ -354,6 +354,11 @@
             <div id="artistsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
+        <div id="artistVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/95 backdrop-blur-sm p-3">
+            <button type="button" id="artistVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none z-10" aria-label="Cerrar">&times;</button>
+            <div id="artistVideoFrame" class="w-[92vw] h-[85vh] rounded-xl overflow-hidden shadow-stage bg-black"></div>
+        </div>
+
         <section id="aplica" class="mb-16 bg-stage-gradient rounded-2xl shadow-stage p-10 border border-secondary/30 relative overflow-hidden">
             <div class="text-center mb-8">
                 <p class="text-xs uppercase tracking-[0.25em] text-secondary mb-3" data-es="Convocatoria Abierta" data-en="Open Call">Convocatoria Abierta</p>
@@ -821,22 +826,45 @@
             ];
             grid.innerHTML = '';
             ARTISTS.forEach(s => {
-                const media = s.type === 'youtube'
-                    ? `<iframe class="w-full rounded-xl border border-secondary/20 aspect-video" src="https://www.youtube.com/embed/${s.src}" frameborder="0" allowfullscreen loading="lazy"></iframe>`
-                    : `<iframe class="w-full rounded-xl" style="height:${s.kind === 'track' ? '152' : '352'}px" src="https://open.spotify.com/embed/${s.kind}/${s.src}" frameborder="0" allow="encrypted-media" loading="lazy"></iframe>`;
-                const link = s.type === 'youtube'
-                    ? `<a href="https://www.youtube.com/watch?v=${s.src}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 text-sm text-secondary hover:text-warm transition font-semibold"><i class="fab fa-youtube"></i><span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span></a>`
-                    : `<a href="https://open.spotify.com/${s.kind}/${s.src}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 text-sm text-secondary hover:text-warm transition font-semibold"><i class="fab fa-spotify"></i><span data-es="Abrir en Spotify" data-en="Open in Spotify">Abrir en Spotify</span></a>`;
+                const thumb = `https://i.ytimg.com/vi/${s.src}/hqdefault.jpg`;
                 const card = document.createElement('div');
                 card.className = 'bg-studio/80 rounded-2xl border border-secondary/20 p-5 shadow-stage flex flex-col';
                 card.innerHTML = `
-                    <div class="mb-4">${media}</div>
+                    <button type="button" class="artist-video group relative block w-full rounded-xl border border-secondary/20 overflow-hidden mb-4 focus:outline-none bg-black" data-src="${s.src}" aria-label="Reproducir ${s.titulo}">
+                        <span class="block aspect-video w-full bg-center bg-cover" style="background-image:url('${thumb}')"></span>
+                        <span class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/45 transition">
+                            <span class="w-14 h-14 rounded-full bg-spotlight-gradient flex items-center justify-center shadow-spotlight transition transform group-hover:scale-110">
+                                <i class="fas fa-play text-primary text-lg ml-0.5"></i>
+                            </span>
+                        </span>
+                    </button>
                     <span class="inline-block self-start text-[10px] uppercase tracking-[0.15em] bg-neon/15 text-neon px-2.5 py-0.5 rounded-full mb-2">${s.genero}</span>
                     <h3 class="font-display font-bold text-lg text-warm leading-tight">${s.titulo}</h3>
                     <p class="text-sm text-white/55">${s.banda}</p>
-                    ${link}`;
+                    <a href="https://www.youtube.com/watch?v=${s.src}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-3 text-sm text-secondary hover:text-warm transition font-semibold"><i class="fab fa-youtube"></i><span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span></a>`;
                 grid.appendChild(card);
             });
+
+            const modal = document.getElementById('artistVideoModal');
+            const frameWrap = document.getElementById('artistVideoFrame');
+            const close = document.getElementById('artistVideoClose');
+            const hide = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+                frameWrap.innerHTML = '';
+            };
+            grid.querySelectorAll('.artist-video').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    frameWrap.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${btn.dataset.src}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            close.addEventListener('click', hide);
+            modal.addEventListener('click', (e) => { if (e.target === modal) hide(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('flex')) hide(); });
         }
 
         function setupJingleVideos() {
