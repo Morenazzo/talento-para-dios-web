@@ -145,9 +145,11 @@
                     </button>
                 </div>
 
-                <div id="heroVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-                    <button type="button" id="heroVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none" aria-label="Cerrar">&times;</button>
-                    <video id="heroVideo" class="max-w-[95vw] max-h-[88vh] w-auto h-auto object-contain rounded-xl shadow-stage" controls playsinline>
+                <div id="heroVideoModal" class="fixed inset-0 z-[60] hidden flex-col items-center bg-black/95 backdrop-blur-sm overflow-y-auto py-16 px-3">
+                    <button type="button" id="heroVideoClose" class="fixed top-4 right-4 z-10 flex items-center gap-2 bg-spotlight-gradient text-primary font-bold text-sm px-4 py-2 rounded-full shadow-golden hover:scale-105 transition" aria-label="Cerrar">
+                        <i class="fas fa-times"></i><span data-es="Cerrar" data-en="Close">Cerrar</span>
+                    </button>
+                    <video id="heroVideo" class="h-auto w-auto max-h-[78vh] max-w-[95vw] my-auto object-contain rounded-xl shadow-stage" controls playsinline>
                         <source src="public/talento-para-dios-video.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -262,9 +264,11 @@
                 <p class="text-white/50 text-xs italic mt-6 font-display" data-es="Haz clic en cualquiera de los videos para reproducirlo" data-en="Click any of the videos to play it">Haz clic en cualquiera de los videos para reproducirlo</p>
             </div>
 
-            <div id="jingleVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-                <button type="button" id="jingleVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none" aria-label="Cerrar">&times;</button>
-                <video id="jingleVideo" class="max-w-[95vw] max-h-[88vh] w-auto h-auto object-contain rounded-xl shadow-stage" controls playsinline></video>
+            <div id="jingleVideoModal" class="fixed inset-0 z-[60] hidden flex-col items-center bg-black/95 backdrop-blur-sm overflow-y-auto py-16 px-3">
+                <button type="button" id="jingleVideoClose" class="fixed top-4 right-4 z-10 flex items-center gap-2 bg-spotlight-gradient text-primary font-bold text-sm px-4 py-2 rounded-full shadow-golden hover:scale-105 transition" aria-label="Cerrar">
+                    <i class="fas fa-times"></i><span data-es="Cerrar" data-en="Close">Cerrar</span>
+                </button>
+                <video id="jingleVideo" class="h-auto w-auto max-h-[78vh] max-w-[95vw] my-auto object-contain rounded-xl shadow-stage" controls playsinline></video>
             </div>
         </section>
 
@@ -355,7 +359,9 @@
         </section>
 
         <div id="artistVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/95 backdrop-blur-sm p-3">
-            <button type="button" id="artistVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none z-10" aria-label="Cerrar">&times;</button>
+            <button type="button" id="artistVideoClose" class="fixed top-4 right-4 z-10 flex items-center gap-2 bg-spotlight-gradient text-primary font-bold text-sm px-4 py-2 rounded-full shadow-golden hover:scale-105 transition" aria-label="Cerrar">
+                <i class="fas fa-times"></i><span data-es="Cerrar" data-en="Close">Cerrar</span>
+            </button>
             <div id="artistVideoFrame" class="w-[92vw] h-[85vh] rounded-xl overflow-hidden shadow-stage bg-black"></div>
         </div>
 
