@@ -241,46 +241,31 @@
                 <h2 class="font-display text-3xl md:text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-warm via-secondary to-warm" data-es="🎵 Escucha Nuestro Jingle 🎵" data-en="🎵 Listen to Our Jingle 🎵">🎵 Escucha Nuestro Jingle 🎵</h2>
                 <p class="text-base mb-8 text-white/70 italic font-display" data-es="Una muestra del poder musical que transformará corazones" data-en="A sample of the musical power that will transform hearts">Una muestra del poder musical que transformará corazones</p>
 
-                <div class="max-w-lg mx-auto">
-                    <div class="bg-deep rounded-2xl p-6 md:p-8 border border-secondary/30 relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+                    <button type="button" class="jingle-video group relative block rounded-2xl border border-secondary/30 bg-deep shadow-stage overflow-hidden focus:outline-none p-8" data-src="public/brilla-fuerte.mp4" data-title="Brilla Fuerte">
+                        <span class="w-20 h-20 mx-auto bg-spotlight-gradient rounded-full flex items-center justify-center shadow-spotlight transition transform group-hover:scale-110">
+                            <i class="fas fa-play text-primary text-2xl ml-1"></i>
+                        </span>
+                        <h3 class="text-xl font-bold text-secondary mt-5 font-display">"Brilla Fuerte"</h3>
+                        <p class="text-warm text-sm" data-es="Jingle Oficial de Talento para Dios" data-en="Official Jingle of Talent for God">Jingle Oficial de Talento para Dios</p>
+                    </button>
 
-                        <div class="relative mb-6">
-                            <div id="audioPlayBtn" class="w-28 h-28 mx-auto bg-spotlight-gradient rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-spotlight relative group">
-                                <div class="w-20 h-20 bg-deep rounded-full flex items-center justify-center border border-secondary/30">
-                                    <i id="playIcon" class="fas fa-play text-secondary text-2xl ml-1"></i>
-                                </div>
-                                <div class="absolute inset-0 rounded-full border border-neon/40 animate-ping opacity-0 group-hover:opacity-100"></div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-secondary mb-1 font-display">"Brilla Fuerte"</h3>
-                        <p class="text-warm text-sm mb-5" data-es="Jingle Oficial de Talento para Dios" data-en="Official Jingle of Talent for God">Jingle Oficial de Talento para Dios</p>
-
-                        <div class="mb-4">
-                            <div class="w-full bg-studio rounded-full h-1.5 overflow-hidden border border-secondary/20">
-                                <div id="audioProgress" class="bg-gradient-to-r from-neon to-secondary h-1.5 rounded-full transition-all duration-200" style="width: 0%"></div>
-                            </div>
-                            <div class="flex justify-between text-[11px] text-white/50 mt-1.5 font-medium">
-                                <span id="currentTime">0:00</span>
-                                <span id="duration">--:--</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-center gap-6 text-secondary">
-                            <button id="volumeBtn" class="hover:text-warm transition"><i class="fas fa-volume-up"></i></button>
-                            <span class="equalizer"><span></span><span></span><span></span><span></span><span></span></span>
-                            <button id="downloadBtn" class="hover:text-warm transition flex items-center gap-2 text-sm"><i class="fas fa-download"></i><span data-es="Descargar" data-en="Download">Descargar</span></button>
-                        </div>
-                    </div>
+                    <button type="button" class="jingle-video group relative block rounded-2xl border border-secondary/30 bg-deep shadow-stage overflow-hidden focus:outline-none p-8" data-src="public/somos-talento-para-dios.mp4" data-title="Somos Talento para Dios">
+                        <span class="w-20 h-20 mx-auto bg-spotlight-gradient rounded-full flex items-center justify-center shadow-spotlight transition transform group-hover:scale-110">
+                            <i class="fas fa-play text-primary text-2xl ml-1"></i>
+                        </span>
+                        <h3 class="text-xl font-bold text-secondary mt-5 font-display">"Somos Talento para Dios"</h3>
+                        <p class="text-warm text-sm" data-es="Conoce el movimiento" data-en="Meet the movement">Conoce el movimiento</p>
+                    </button>
                 </div>
 
-                <p class="text-white/50 text-xs italic mt-6 font-display" data-es="Haz clic en reproducir para escuchar una muestra de la calidad musical que ofreceremos" data-en="Click play to hear a sample of the musical quality we will offer">Haz clic en reproducir para escuchar una muestra de la calidad musical que ofreceremos</p>
+                <p class="text-white/50 text-xs italic mt-6 font-display" data-es="Haz clic en cualquiera de los videos para reproducirlo" data-en="Click any of the videos to play it">Haz clic en cualquiera de los videos para reproducirlo</p>
             </div>
 
-            <audio id="jingleAudio" preload="metadata">
-                <source src="https://pfst.cf2.poecdn.net/base/audio/cc05167a177bbbc7840af123e50e65ce2cb4d9394368313aa668eb7cd121522b" type="audio/mpeg">
-            </audio>
+            <div id="jingleVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+                <button type="button" id="jingleVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none" aria-label="Cerrar">&times;</button>
+                <video id="jingleVideo" class="w-full max-w-3xl rounded-xl shadow-stage" controls playsinline></video>
+            </div>
         </section>
 
         <section id="modelo" class="mb-16 bg-studio/70 backdrop-blur-sm rounded-2xl shadow-stage p-10 border border-secondary/20 relative overflow-hidden">
@@ -750,7 +735,7 @@
             changeLanguage('es');
             setupCountdown();
             setupDonationForm();
-            setupAudioPlayer();
+            setupJingleVideos();
             renderArtists();
             setupBandForm();
             setupTheme();
@@ -852,6 +837,31 @@
                     ${link}`;
                 grid.appendChild(card);
             });
+        }
+
+        function setupJingleVideos() {
+            const modal = document.getElementById('jingleVideoModal');
+            const close = document.getElementById('jingleVideoClose');
+            const video = document.getElementById('jingleVideo');
+            if (!modal) return;
+            const hide = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+                video.pause();
+            };
+            document.querySelectorAll('.jingle-video').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    video.src = btn.dataset.src;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    video.play().catch(() => {});
+                });
+            });
+            close.addEventListener('click', hide);
+            modal.addEventListener('click', (e) => { if (e.target === modal) hide(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('flex')) hide(); });
         }
 
         function setupAudioPlayer() {
