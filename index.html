@@ -134,7 +134,22 @@
         <header class="mb-16 text-center relative">
             <div class="relative z-10 pt-4 pb-12 md:pt-8 md:pb-16">
                 <div class="relative max-w-3xl mx-auto px-4">
-                    <img src="public/logotipo talento para Dios.png" alt="Talento para Dios — Concierto + Pasarela de Adopción · Septiembre 2026" class="relative w-full max-w-2xl mx-auto rounded-2xl border border-secondary/25 shadow-stage">
+                    <button type="button" id="heroVideoBtn" class="group relative block w-full max-w-2xl mx-auto rounded-2xl border border-secondary/25 shadow-stage overflow-hidden focus:outline-none" aria-label="Reproducir video Talento para Dios">
+                        <img src="public/logotipo talento para Dios.png" alt="Talento para Dios — Concierto + Pasarela de Adopción · Septiembre 2026" class="w-full block transition duration-300 group-hover:scale-105">
+                        <span class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/45 transition">
+                            <span class="w-20 h-20 rounded-full bg-spotlight-gradient flex items-center justify-center shadow-spotlight transition transform group-hover:scale-110">
+                                <i class="fas fa-play text-primary text-2xl ml-1"></i>
+                            </span>
+                        </span>
+                        <span class="absolute bottom-3 left-1/2 -translate-x-1/2 text-[11px] uppercase tracking-[0.2em] text-white/90 bg-black/40 px-3 py-1 rounded-full" data-es="Ver video" data-en="Watch video">Ver video</span>
+                    </button>
+                </div>
+
+                <div id="heroVideoModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+                    <button type="button" id="heroVideoClose" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl leading-none" aria-label="Cerrar">&times;</button>
+                    <video id="heroVideo" class="w-full max-w-4xl rounded-xl shadow-stage" controls playsinline>
+                        <source src="public/talento-para-dios-video.mp4" type="video/mp4">
+                    </video>
                 </div>
 
                 <h1 class="sr-only">Talento para Dios — Concierto + Pasarela de Adopción · Septiembre 2026</h1>
@@ -739,7 +754,33 @@
             renderArtists();
             setupBandForm();
             setupTheme();
+            setupHeroVideo();
         });
+
+        function setupHeroVideo() {
+            const btn = document.getElementById('heroVideoBtn');
+            const modal = document.getElementById('heroVideoModal');
+            const close = document.getElementById('heroVideoClose');
+            const video = document.getElementById('heroVideo');
+            if (!btn || !modal) return;
+            const open = () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            };
+            const hide = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+                video.pause();
+            };
+            btn.addEventListener('click', open);
+            close.addEventListener('click', hide);
+            modal.addEventListener('click', (e) => { if (e.target === modal) hide(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('flex')) hide(); });
+        }
 
         function setupTheme() {
             const root = document.documentElement;
