@@ -12,6 +12,12 @@
     <meta property="og:image" content="public/logotipo talento para Dios.png">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#04060C">
+    <script>
+        (function () {
+            var t = localStorage.getItem('tpd_theme') || 'light';
+            if (t === 'light') document.documentElement.classList.add('light');
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -785,7 +791,7 @@
                 if (t === 'light') { root.classList.add('light'); icon.className = 'fas fa-sun text-sm'; }
                 else { root.classList.remove('light'); icon.className = 'fas fa-moon text-sm'; }
             };
-            apply(localStorage.getItem('tpd_theme') || 'dark');
+            apply(localStorage.getItem('tpd_theme') || 'light');
             document.getElementById('btn-theme').addEventListener('click', () => {
                 const next = root.classList.contains('light') ? 'dark' : 'light';
                 localStorage.setItem('tpd_theme', next);
